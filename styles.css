@@ -113,15 +113,10 @@ nav ul li a:hover::before{
 
 .volume{
     cursor: pointer;
+    margin:auto;
 }
 #volumeBarra{
     display:none;
-}
-
-.volumeDown{
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
 }
 
 
@@ -203,7 +198,7 @@ nav ul li a:hover::before{
     font-family: "Inria Serif", serif;
 }
 
-/* ------------ Novedades ------------
+/*  ------------ Novedades ------------ */
 
 
 .hoja{
@@ -215,16 +210,18 @@ nav ul li a:hover::before{
 
 .izq{
     left: 0;
+    /* transform: translateX(-20%); */
     transition: left .8s;
 }
 .der{
     right: 0;
+    /* transform: translateX(30%); */
     transition: right .8s;
 }
 
 .novedades{
     width:100%;
-    background-color: #B4F9A4 /*#2F4F4F;
+    background-color: #B4F9A4 /* #2F4F4F */;
     padding: 90px;
     padding-bottom: 15vh;
     display:flex;
@@ -242,8 +239,8 @@ nav ul li a:hover::before{
     color:transparent;
     font-family: "Italiana", sans-serif;
     font-weight: 400;
-    font-size: 3.4em;
-    margin-bottom: 70px;
+    font-size: 4.6em;
+    margin-bottom: max(50px, 8%);
 }
 
 .novedades-cards{
@@ -251,36 +248,22 @@ nav ul li a:hover::before{
     justify-content: center;
     width:100%;
     max-width:2600px;
-    gap: 70px;
+    gap: 6vw;
 }
 
 .novedades-card{
-    width:25%;
-    border-radius: 35px;
+    border-radius: 20px;
     position:relative;
-}
-
-.novedades-card:first-child{
-    background-color: #EFEA7D;
-}
-
-.novedades-card:nth-child(2){
-    background-color: #CC6671;
-}
-
-.novedades-card:last-child{
-    background-color: #E2853E;
+    width: max(20%, 200px);
+    background-color: hsl(96, 100%, 99%);
+    border-radius: 35px;
+    aspect-ratio: 3/4;
+    box-shadow: 0px 2px 2px #0004;
 }
 
 .novedades-text{
-    background-color: #fff;
-    border-radius: 35px;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10%;
-    position:relative;
-    bottom: 0;
+    padding: 15%;
+    padding-bottom: 20%;
 }
 .novedades-text h3{
     margin-bottom: 10%;
@@ -296,13 +279,20 @@ nav ul li a:hover::before{
 
 .novedades-card-img img{
     width: 100%;
-    height: 270px;
+    aspect-ratio: 1/1;
     object-fit: cover;
     align-content: center;
     border-radius: 35px 35px 0 0;
-    mask-image: radial-gradient(yellow, transparent);
-} */
+}
 
+.novedades-end{
+    position: absolute;
+    bottom:0;
+    width:100%;
+    height: 5%;
+    max-height: 30px;
+    background-color:#2F4F4F;
+}
 
 /*----------- Recomendados ------------*/
 
@@ -442,7 +432,9 @@ nav ul li a:hover::before{
 .cartas-img{
     max-width: 35%;
     min-width: 400px;
+    aspect-ratio: 3/2;
     border-radius: 20px;
+    object-fit: cover;
 }
 
 .carta-content{
@@ -452,6 +444,15 @@ nav ul li a:hover::before{
     position:relative;
     align-items: center;
     justify-content: center;
+}
+
+.carta-der{
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.carta-izq{
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 
 .text-container{
@@ -539,7 +540,6 @@ nav ul li a:hover::before{
 .grid-6{
     grid-column: span 2;
 }
-
 /* images */
 
 .slick-list{
@@ -928,18 +928,17 @@ right: 10px;
     max-width:100%;
 }
 footer{
-    max-width:100vw;
+    width:100vw;
     margin-top:100px;
     background-color:#2F4F4F/* #EBF4EF*/ ;
-    padding-top: 80px 0;
 }
 .footer-content{
-    height:30vh;
     display:flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
     max-width: 1200px;
     padding-top: 6vh;
-    margin: 0 auto;
+    margin: 40px auto;
 }
 footer h2 {
     font-family: "Inria Serif", serif;
@@ -955,6 +954,7 @@ footer p{
     margin: 2vh 0;
     font-size: 1rem;
 }
+
 .footer-contactanos > p > a{
     font-family: "Inria Serif", serif;
     font-weight: bold;
@@ -963,6 +963,7 @@ footer p{
 
 .footer-logo{
     max-width: 100%;
+    margin-top: 50px;
 }
 
 .footer-desarrollado{
@@ -992,10 +993,6 @@ footer svg:hover{
 }
 /*----------------------RESPONSIVE----------------------*/
 @media only screen and (width < 480px){
-    .cartas-img{
-        min-width: 150px;
-        max-height:150px;
-    }
     .horarios > h2, .reseñas > h2, .ubicacion > h2{
         font-size:2.6em;
     }
@@ -1008,7 +1005,12 @@ footer svg:hover{
 }
 @media only screen and (width < 768px){
     .footer-content{
-        margin-left: 0 40px;
+        padding:40px;
+        display: block;
+    }
+    .footer-logo{
+        margin-top:50px;
+        max-width: 100%;
     }
     .header{
         justify-content: space-between;
@@ -1070,9 +1072,7 @@ footer svg:hover{
         opacity: 0.8;
     }
     .cartas-img{
-        object-fit: cover;
-        min-width:240px;
-        height: 100%;
+        width:100%;
     }
     .text-container h3{
         text-align: center;
@@ -1081,7 +1081,6 @@ footer svg:hover{
         padding-right:20px;
     }
     .cartas-content{
-        min-width: 50%;
         height:100%;
     }
     .reseñas-container{
@@ -1112,19 +1111,21 @@ footer svg:hover{
         display: none;
     }
 }
-
 @media only screen and (width < 1200px) {
     .carta-container {
         flex-direction: column; 
         align-items: center;    
         text-align: center; 
     }
+    .carta-content{
+        border-radius: 0;
+    }
     .carta-container-izq{
         flex-direction: column-reverse;
     }
-    .carta-container img {
+    .cartas-img {
         width: 100%; 
-        border-radius: 8px;
+        border-radius: 5px;
     }
 
     .carta-container h2 {

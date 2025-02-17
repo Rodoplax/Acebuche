@@ -119,7 +119,7 @@ document.addEventListener('scroll', () => {
     const scrollDer = document.querySelector('.der');
     const scrollIzq = document.querySelector('.izq');
     const rect = scrollDer.getBoundingClientRect();
-    if (screenWidth >= 800 && screenWidth <= 1800)
+    if (screenWidth >= 768 && screenWidth <= 2200)
         if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
             scrollDer.style.right = '-15%';
             scrollIzq.style.left = '-10%';
@@ -155,13 +155,13 @@ sound.play();
 function toggleAudio() {
   if (sound.paused) {
     sound.play();
-    volumeButton.style.display = "block"; 
+    volumeButton.style.display = "inherit"; 
     volumeBarra.style.display = "none";  
   } else {
     
     sound.pause();
     volumeButton.style.display = "none"; 
-    volumeBarra.style.display = "block"; 
+    volumeBarra.style.display = "inherit"; 
   }
 }
 
