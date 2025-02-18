@@ -4,6 +4,8 @@
 html{
     scroll-behavior: smooth;
     scroll-padding-top: 70px;
+    background-color: hsl(32, 68%, 99%);
+    color: hsl(32, 40%, 6%);
 }
 
 *{
@@ -197,7 +199,6 @@ nav ul li a:hover::before{
     line-height: 36px;
     font-family: "Inria Serif", serif;
 }
-
 /*  ------------ Novedades ------------ */
 
 
@@ -221,7 +222,7 @@ nav ul li a:hover::before{
 
 .novedades{
     width:100%;
-    background-color: #B4F9A4 /* #2F4F4F */;
+    background-color: #B4F9A4 /* #fac3a3 */;
     padding: 90px;
     padding-bottom: 15vh;
     display:flex;
@@ -233,7 +234,7 @@ nav ul li a:hover::before{
 }
 
 .novedades h2{
-    background: linear-gradient(to right, #000,#3B5E21);
+    background-color: #132310/* linear-gradient(to right, #000,#3B5E21) */;
     -webkit-background-clip: text;
     background-clip: text;
     color:transparent;
@@ -254,11 +255,17 @@ nav ul li a:hover::before{
 .novedades-card{
     border-radius: 20px;
     position:relative;
-    width: max(20%, 200px);
+    width: max(25%, 200px);
     background-color: hsl(96, 100%, 99%);
+    outline: 1px double hsl(32, 30%, 5%, 30%);
     border-radius: 35px;
     aspect-ratio: 3/4;
-    box-shadow: 0px 2px 2px #0004;
+    box-shadow: 0px 2px 4px #0004;
+    transition: outline .7s;
+}
+
+.novedades-card:hover{
+    outline-width: 8px;
 }
 
 .novedades-text{
@@ -268,9 +275,10 @@ nav ul li a:hover::before{
 .novedades-text h3{
     margin-bottom: 10%;
     font-family: "Italiana", sans-serif;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 1.4rem;
     text-align: center;
+    color:#132310;
 }
 .novedades-text p{
     text-align: center;
@@ -285,6 +293,12 @@ nav ul li a:hover::before{
     border-radius: 35px 35px 0 0;
 }
 
+.novedades-card:first-child img{
+    object-position: 0 25%;
+}
+.novedades-card:last-child img{
+    object-position: 0 35%;
+}
 .novedades-end{
     position: absolute;
     bottom:0;
@@ -294,102 +308,11 @@ nav ul li a:hover::before{
     background-color:#2F4F4F;
 }
 
-/*----------- Recomendados ------------*/
-
-.titulo-destacados > h2{
-    font-family: "Inria Serif", serif;
-    font-weight: bold;
-    font-size:2.4em;
-    text-align: center;
-    margin: 15% 0% 3% 0%;
-    border-bottom: 2px #2F4F4F solid;
-}
-.platos-recomendados {
-    width: 100vw;
-    min-height: 100vh; 
-    background-color: #2F4F4F;
-    display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-
-.plato {
-    max-height: 100%;
-    max-width: 100%; 
-    background-color: #eff5f5;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 100%;
-    padding: 10%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.plato:hover {
-    transform: translateY(-5px); 
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.plato > h4 {
-    font-size: 1.5em;
-    padding-bottom: 10%;
-    font-family: 'Times New Roman', Times, serif;
-    color: #333;
-}
-
-.plato > p {
-    font-size: 0.9em;
-    text-align: center;
-    color: #666;
-}
-
-.img-platos {
-    width: 50%;
-    height: 100%;
-    object-fit: cover; 
-    padding-bottom: 20%;
-    border-radius: 10px;
-}
-
-@media (max-width: 768px) {
-    .plato {
-        padding: 5%; 
-    }
-
-    .plato > h4 {
-        font-size: 1.2em; 
-    }
-
-    .plato > p {
-        font-size: 0.8em; 
-    }
-
-    .img-platos {
-        padding-bottom: 10%;
-    }
-}
-
-@media (max-width: 480px) {
-    .platos-recomendados {
-        grid-template-columns: 1fr; 
-    }
-
-    .plato {
-        padding: 5%;
-    }
-}
-
 /*--------------Cartas----------------*/
 
 .cartas{
     width: 100%;
-    max-width: 1300px;
+    max-width: 1400px;
     margin:auto;
     padding-top:90px;
     overflow-x: hidden;
@@ -439,7 +362,7 @@ nav ul li a:hover::before{
 
 .carta-content{
     width: 100%;
-    background-color: #f8eada;
+    background-color: hsl(32, 68%, 86%);
     padding:4%;
     position:relative;
     align-items: center;
@@ -710,7 +633,7 @@ right: 10px;
     font-size:3.3em;
     text-align: center;
     margin-bottom: 90px;
-    border-bottom: 2px #2F4F4F solid;
+    border-bottom: 2px #4f452f solid;
 }
 
 .horarios-fondo{
@@ -930,16 +853,18 @@ right: 10px;
 footer{
     width:100vw;
     margin-top:100px;
-    background-color:#2F4F4F/* #EBF4EF*/ ;
+    background-color:#2F4F4F/* #EBF4EF*/;
 }
 .footer-content{
     display:flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-evenly;
+    align-self: center;
+    width:100%;
     max-width: 1200px;
-    padding-top: 6vh;
+    padding: 6vh 0;
     margin: 40px auto;
 }
+
 footer h2 {
     font-family: "Inria Serif", serif;
     color:#fff/*#2F3733*/;
@@ -948,22 +873,28 @@ footer h2 {
     font-size: 1.8rem;
 }
 footer p{
-    font-family: "Inria Serif", serif;
     color: #fff/*#2F3733*/;
     font-weight: bold;
     margin: 2vh 0;
     font-size: 1rem;
 }
-
 .footer-contactanos > p > a{
     font-family: "Inria Serif", serif;
     font-weight: bold;
     color: #ffffffc8/*#314b89*/;
+    display: flex;
+    align-items: center;
 }
-
 .footer-logo{
+    aspect-ratio: 1/1;
+    width:fit-content;
+}
+.footer-logo > img{
     max-width: 100%;
-    margin-top: 50px;
+    height:100%;
+    object-fit: contain;
+    object-position: top;
+
 }
 
 .footer-desarrollado{
@@ -971,7 +902,6 @@ footer p{
     display:flex;
     justify-content: center;
     padding: 20px;
-    margin-top: 5%;
     border-top: 1px #fff solid;
 }
 
@@ -984,8 +914,8 @@ footer p{
 
 footer svg{
     margin-right: 6px;
-    fill: hsl(36, 91%, 70%);
-    transition:fill .3s;
+    fill: hsl(27, 68%, 68%);
+    transition: fill .3s;
 }
 
 footer svg:hover{
@@ -1006,7 +936,6 @@ footer svg:hover{
 @media only screen and (width < 768px){
     .footer-content{
         padding:40px;
-        display: block;
     }
     .footer-logo{
         margin-top:50px;
@@ -1060,6 +989,9 @@ footer svg:hover{
         text-align: center;
         justify-content: center;
     }
+    .novedades{
+        background-color: #fac3a3;/* JAVIIIIIIIIIIIIIIIII mira esta color a ver que te parece, sobre todo en movil */
+    }
     .novedades-cards{
         flex-direction: column;
         align-items: center;
@@ -1069,10 +1001,7 @@ footer svg:hover{
     }
     .hoja{
         z-index: 0;
-        opacity: 0.8;
-    }
-    .cartas-img{
-        width:100%;
+        opacity: 0;
     }
     .text-container h3{
         text-align: center;
@@ -1112,19 +1041,45 @@ footer svg:hover{
     }
 }
 @media only screen and (width < 1200px) {
+    .carta-h2{
+        margin-bottom: 300px;
+    }
     .carta-container {
+        transform: scale(1);
         flex-direction: column; 
         align-items: center;    
         text-align: center; 
+        position: relative;
     }
     .carta-content{
         border-radius: 0;
+        height:0;
+        background-color: transparent;
     }
+    .cartas-img:first-child {
+        transform: translateY(45%);
+        z-index: -1;
+    }
+    .cartas-img:last-child {
+        transform: translateY(-67.5%);
+        z-index: -1;
+    }
+    .carta-container-der{
+        margin-top: 700px;
+    }
+    
     .carta-container-izq{
-        flex-direction: column-reverse;
+        margin-top: 700px;
+    }
+    
+    .text-container{
+        background-color: hsl(32, 68%, 86%);
+        border-radius: 10px;
+        padding: 20px;
     }
     .cartas-img {
-        width: 100%; 
+        max-width: 100%; 
+        width:100%;
         border-radius: 5px;
     }
 
@@ -1133,6 +1088,7 @@ footer svg:hover{
     }
     
     .card-button{
-        margin-left: 5%;
+        margin: auto;
+        margin-top:20px;
     }
 }
